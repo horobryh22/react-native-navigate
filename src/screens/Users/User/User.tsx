@@ -1,16 +1,16 @@
 import {FlatList, ListRenderItem, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
-import {array, objType} from '../../../data/data';
+import {array, UserType} from '../../../data/data';
 import {useAppNavigation} from '../../../types/types';
 
-export function MainScreen() {
+export function User() {
 
     const navigation = useAppNavigation()
 
-    const render: ListRenderItem<objType> = ({item}) => {
+    const render: ListRenderItem<UserType> = ({item}) => {
         return <View>
             <TouchableOpacity onPress={() => {
-                navigation.navigate('Users', {screen: 'MainDetails', params: {id: item.id}})
+                navigation.navigate('Users', {screen: 'UserDetails', params: {id: item.id}})
             }}>
                 <Text>{item.name}</Text>
                 <Text>{item.age}</Text>

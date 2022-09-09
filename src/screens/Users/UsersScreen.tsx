@@ -1,16 +1,16 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import {NestedStack} from '../../types/types';
-import {MainScreen} from '../Users/Main/Main';
-import {MainDetailsScreen} from '../Users/MainDetails/MainDetails';
+import {UsersNestedStack} from '../../types/types';
+import {User} from '../../../src/screens/Users/User/User';
+import {UserDetails} from '../../../src/screens/Users/UserDetails/UserDetails';
 
-const Stack = createStackNavigator<NestedStack>();
+const Stack = createStackNavigator<UsersNestedStack>();
 
 export function UsersScreen() {
     return (
         <Stack.Navigator>
-            <Stack.Screen name={'Main'} component={MainScreen}/>
-            <Stack.Screen name={'MainDetails'} component={MainDetailsScreen}/>
+            <Stack.Screen name={'User'} component={User}/>
+            <Stack.Screen name={'UserDetails'} component={UserDetails}/>
         </Stack.Navigator>
     );
 }
